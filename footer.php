@@ -1,23 +1,31 @@
-	</div><!-- /grid-pad -->
-	<footer>
+	</main><!-- /grid-pad -->
+	<footer class="footer">
 	<div class="grid">
 		<div class="col-1-4">
-		  <p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit</p> 
+			<h3>Footer Title</h3>
+		  	<p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit</p> 
 		</div>
 		<div class="col-1-4">
-		  <p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit </p>
+			<h3>Footer Title</h3>
+		  	<p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit </p>
 		</div>
 		<div class="col-1-4">
-		  <p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit </p>
+			<h3>Footer Title</h3>
+		  	<p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit </p>
 		</div>
 		<div class="col-1-4">
-		  <p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit </p>
+			<h3>Company Details</h3>
+		  	<p><?php if(!empty( get_option('website_company_address'))) echo nl2br(get_option('website_company_address')); ?></p>
 		</div>
 	</div>
 	<div class="bottom">
 		<div class="grid">
-			<div class="col-1-1">
-			  Copyright <?php echo date('Y') . ' ' . $company['name']; ?>
+			<div class="col-1-2">
+			  Copyright &copy; <?= date('Y') ?>
+			  <?php if(!empty( get_option('website_company_name'))) echo get_option('website_company_name'); ?>
+			</div>
+			<div class="col-1-2 made-by">
+			  Web design by <strong>BLANK</strong>
 			</div>
 		</div>
 	</div>

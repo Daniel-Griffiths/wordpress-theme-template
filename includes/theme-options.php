@@ -3,147 +3,129 @@
 |-------------------------------------------------------
 | Theme Settings
 |-------------------------------------------------------
+| Key:-
+|   Title - Title displayed on the input form
+|   Name  - The name of the entry inserted into the DB
+|   Type  - Input type used for form validation
+|   Placeholder - Placeholder text for the input field
+|
+|*/
+
+/* add new arrays to add more options to the theme form */
+$website_settings = array(
+    array(
+        'Title' => 'Company Name',
+        'Name'  => 'website_company_name',
+        'Type'  => 'text',
+        'Placeholder' => ''
+    ),
+    array(
+        'Title' => 'Telephone Number 1',
+        'Name'  => 'website_tel_1',
+        'Type'  => 'tel',
+        'Placeholder' => ''
+    ),
+    array(
+        'Title' => 'Telephone Number 2',
+        'Name'  => 'website_tel_2',
+        'Type'  => 'tel',
+        'Placeholder' => ''
+    ),
+    array(
+        'Title' => 'Email Address',
+        'Name'  => 'website_email',
+        'Type'  => 'email',
+        'Placeholder' => ''
+    ),    
+    array(
+        'Title' => 'Company Address',
+        'Name'  => 'website_company_address',
+        'Type'  => 'textarea',
+        'Placeholder' => ''
+    ),
+    array(
+        'Title' => 'Twitter URL',
+        'Name'  => 'website_twitter_url',
+        'Type'  => 'url',
+        'Placeholder' => ''
+    ),
+    array(
+        'Title' => 'Facebook URL',
+        'Name'  => 'website_facebook_url',
+        'Type'  => 'url',
+        'Placeholder' => ''
+    ),
+    array(
+        'Title' => 'Linkedin URL',
+        'Name'  => 'website_linkedin_url',
+        'Type'  => 'url',
+        'Placeholder' => ''
+    )
+);
+
+/*
+|-------------------------------------------------------
+| Begin Options Functions
+|-------------------------------------------------------
 */
 
-class themeSettingsPage
-{
-    /**
-     * Holds the values to be used in the fields callbacks
-     */
-    private $options;
+// create custom plugin settings menu
+add_action('admin_menu', 'website_options_menu');
 
-    /**
-     * Start up
-     */
-    public function __construct()
-    {
-        add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
-        add_action( 'admin_init', array( $this, 'page_init' ) );
+function website_options_menu() {
+
+    //create new top-level menu
+    add_menu_page('Website Settings', 'Website Settings', 'administrator', __FILE__, 'website_options_page' , null );
+
+    //call register settings function
+    add_action( 'admin_init', 'register_website_options' );
+}
+
+function register_website_options() {
+    //register settings
+    global $website_settings;
+
+    foreach($website_settings as $key => $value){
+        register_setting('website-options-group', $value['Name']);   
     }
 
-    /**
-     * Add options page
-     */
-    public function add_plugin_page()
-    {
-        // This page will be under "Settings"
-        add_options_page(
-            'Settings Admin', 
-            'Website Options', 
-            'manage_options', 
-            'website-options-admin', 
-            array( $this, 'create_admin_page' )
-        );
-    }
+}
 
-    /**
-     * Options page callback
-     */
-    public function create_admin_page()
-    {
-        // Set class property
-        $this->options = get_option( 'my_option_name' );
+function website_options_page() {
+
+    global $website_settings;
+?>
+<div class="wrap">
+<h2>Website Options</h2>
+
+<form method="post" action="options.php">
+    <?php settings_fields( 'website-options-group' ); ?>
+    <?php do_settings_sections( 'website-options-group' ); ?>
+    <table class="form-table">
+        <?php 
+        foreach($website_settings as $key => $value){
+
+            echo '
+                <tr valign="top">
+                <th scope="row">' . $value['Title'] . '</th>
+                    <td>';
+            
+                if($value['Type'] == 'textarea'){
+                    echo '<textarea name="' . $value['Name'] . '">' . esc_attr(get_option($value['Name'])) . '</textarea>';
+                } else {
+                    echo '<input type="' . $value['Type'] . '" name="' . $value['Name'] . '" value="' . esc_attr(get_option($value['Name'])) . '" placeholder="' . $value['Placeholder'] .'" />';
+                }
+            
+            echo '
+                    </td>
+                </tr>
+                ';
+        }
         ?>
-        <div class="wrap">
-            <h2>Website Options</h2>           
-            <form method="post" action="options.php">
-            <?php
-                // This prints out all hidden setting fields
-                settings_fields( 'my_option_group' );   
-                do_settings_sections( 'website-options-admin' );
-                submit_button(); 
-            ?>
-            </form>
-        </div>
-        <?php
-    }
+    </table>
+    
+    <?php submit_button(); ?>
 
-    /**
-     * Register and add settings
-     */
-    public function page_init()
-    {        
-        register_setting(
-            'my_option_group', // Option group
-            'my_option_name', // Option name
-            array( $this, 'sanitize' ) // Sanitize
-        );
-
-        add_settings_section(
-            'setting_section_id', // ID
-            'My Custom Settings', // Title
-            array( $this, 'print_section_info' ), // Callback
-            'website-options-admin' // Page
-        );  
-
-        add_settings_field(
-            'id_number', // ID
-            'ID Number', // Title 
-            array( $this, 'id_number_callback' ), // Callback
-            'website-options-admin', // Page
-            'setting_section_id' // Section           
-        );      
-
-        add_settings_field(
-            'title', 
-            'Title', 
-            array( $this, 'title_callback' ), 
-            'website-options-admin', 
-            'setting_section_id'
-        );      
-    }
-
-    /**
-     * Sanitize each setting field as needed
-     *
-     * @param array $input Contains all settings fields as array keys
-     */
-    public function sanitize( $input )
-    {
-        $new_input = array();
-        if( isset( $input['id_number'] ) )
-            $new_input['id_number'] = absint( $input['id_number'] );
-
-        if( isset( $input['title'] ) )
-            $new_input['title'] = sanitize_text_field( $input['title'] );
-
-        return $new_input;
-    }
-
-    /** 
-     * Print the Section text
-     */
-    public function print_section_info()
-    {
-        echo 'Enter your settings below:';
-    }
-
-    /** 
-     * Get the settings option array and print one of its values
-     */
-    public function id_number_callback()
-    {
-        printf(
-            '<input type="text" id="id_number" name="my_option_name[id_number]" value="%s" />',
-            isset( $this->options['id_number'] ) ? esc_attr( $this->options['id_number']) : ''
-        );
-    }
-
-    /** 
-     * Get the settings option array and print one of its values
-     */
-    public function title_callback()
-    {
-        printf(
-            '<input type="text" id="title" name="my_option_name[title]" value="%s" />',
-            isset( $this->options['title'] ) ? esc_attr( $this->options['title']) : ''
-        );
-    }
-}
-
-/** 
- * Add options to the admin dashboard
- */
-if( is_admin() ){
-    $theme_settings_page = new themeSettingsPage();
-}
+</form>
+</div>
+<?php } ?>

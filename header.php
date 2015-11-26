@@ -6,14 +6,24 @@
 	<title><?php wp_title( ' | ', true, 'right' ); ?></title>
 	<link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/mobile.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 	<div id="wrapper" class="hfeed">
 	<header id="header" role="banner">
 		<section id="branding" class="grid">
-			<div class="col-1-1">
+			<div class="col-1-2">
 				<img class="logo" src="<?= get_template_directory_uri() ?>/assets/img/logo.png">
+			</div>
+			<div class="col-1-2">
+				<?php 
+					/* display website details */
+					if(!empty( get_option('website_tel'))) 			echo '<div>' . get_option('website_tel') . '</div>';
+					if(!empty( get_option('website_email'))) 		echo '<div>' . get_option('website_email') . '</div>';
+					if(!empty( get_option('website_facebook_url'))) echo '<div>' . get_option('website_facebook_url') . '</div>';
+					if(!empty( get_option('website_twitter_url')))  echo '<div>' . get_option('website_twitter_url') . '</div>'; 
+				?>
 			</div>
 		</section>
 		<nav id="menu" role="navigation">
@@ -22,4 +32,19 @@
 			</div>
 		</nav>
 	</header>
-	<div class="grid">
+
+	<?php 
+	/* display featured image as a hero banner */
+	if(has_post_thumbnail()){ 
+		echo '
+		<div class="hero-banner" style="background-image:url(' . wp_get_attachment_url( get_post_thumbnail_id($post->ID)) . ');">
+			<div class="inner">
+				<h1><strong>Main Text</strong><br>Sub Text</h1>
+				<a href="#" class="btn btn-default">Button</a>
+				<a href="#" class="btn btn-default">Button</a>
+			</div>
+		</div>
+		';	
+	} 
+	?>
+	<main class="grid main-content">
