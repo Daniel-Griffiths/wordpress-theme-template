@@ -6,7 +6,7 @@
 	<title><?php wp_title( ' | ', true, 'right' ); ?></title>
 	<link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/mobile.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -14,7 +14,9 @@
 	<header id="header" role="banner">
 		<section id="branding" class="grid">
 			<div class="col-1-2">
-				<img class="logo" src="<?= get_template_directory_uri() ?>/assets/img/logo.png">
+				<a href="/">
+					<img class="logo" alt="Logo" src="<?= get_template_directory_uri() ?>/assets/img/logo.png">
+				</a>
 			</div>
 			<div class="col-1-2">
 				<?php 

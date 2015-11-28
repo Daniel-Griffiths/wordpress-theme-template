@@ -2,21 +2,21 @@
 	
 	/* navigation */
 	header nav ul{
-		position: fixed;
 		top: 0;
 		left: 0;
+		z-index:10;
+		height:100%;
+		position: fixed;
 		background: #272626;
 		padding:0 !important;
 		width:70% !important;
-		height:100%;
-		z-index:10;
 		transform: translateX(-100%);
 		-webkit-transform: translateX(-100%);
 	}
 	
 	header nav li{
-		width:100%;
 		border:0;
+		width:100%;
 	}
 	
 	header nav{
@@ -29,21 +29,21 @@
 		display: block;
 		color: #fff;
 		height: 45px;
+		font-size: 24px;
 		line-height: 45px;
 		text-align: right;
-		font-size: 24px;
 	}
 	
 	/* sub nav */
 	header nav ul ul{
-		width:100% !important;
+		top:0;
 		opacity:1;
 		position:relative;
-		top:0;
+		width:100% !important;
 	}
 	
 	header nav ul ul a{
-		background: rgba(0,0,0,0.3);
 		padding-left:40px;
+		background: rgba(0,0,0,0.3);
 	}
 }

@@ -60,6 +60,12 @@ $website_settings = array(
         'Name'  => 'website_linkedin_url',
         'Type'  => 'url',
         'Placeholder' => ''
+    ),
+    array(
+        'Title' => 'Disqus Username (used for blog comments)',
+        'Name'  => 'website_disqus_username',
+        'Type'  => 'text',
+        'Placeholder' => ''
     )
 );
 
@@ -111,7 +117,7 @@ function website_options_page() {
                     <td>';
             
                 if($value['Type'] == 'textarea'){
-                    echo '<textarea name="' . $value['Name'] . '">' . esc_attr(get_option($value['Name'])) . '</textarea>';
+                    echo '<textarea style="min-height: 110px;" name="' . $value['Name'] . '">' . esc_attr(get_option($value['Name'])) . '</textarea>';
                 } else {
                     echo '<input type="' . $value['Type'] . '" name="' . $value['Name'] . '" value="' . esc_attr(get_option($value['Name'])) . '" placeholder="' . $value['Placeholder'] .'" />';
                 }
