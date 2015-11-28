@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     |-------------------------------------------------------
     | Watch
     |-------------------------------------------------------
-    | watch for any SCSS file changes 
+    | watch for any SASS file changes 
     |
     */
 

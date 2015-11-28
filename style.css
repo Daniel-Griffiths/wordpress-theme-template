@@ -7,8 +7,15 @@ Description: Daniel Griffiths
 Version: 0.1
 License: GNU General Public License
 License URI: https://www.gnu.org/licenses/gpl.html
-Tags: Daniel Griffiths
-Text Domain: Daniel Griffiths
 */
 
-/* kinda silly that wordpress gets theme info from a css file... */
+/* these empty classes need to be here to make wordpress validators happy */
+.wp-caption{}
+.wp-caption-text{}
+.sticky{}
+.screen-reader-text {}
+.gallery-caption{}
+.bypostauthor{}
+.alignright{}
+.alignleft{}
+.aligncenter{}

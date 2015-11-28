@@ -2,10 +2,10 @@
 <section id="content" role="main">
 <article id="post-0" class="post not-found">
 <header class="header">
-<h1 class="title"><?= _e( 'Not Found', 'blankslate' ); ?></h1>
+<h1 class="title"><?= _e( 'Not Found', 'wordpresstheme' ); ?></h1>
 </header>
 <section class="entry-content">
-<p><?= _e( 'Nothing found for the requested page. Try a search instead?', 'blankslate' ); ?></p>
+<p><?= _e( 'Nothing found for the requested page. Try a search instead?', 'wordpresstheme' ); ?></p>
 <?= get_search_form(); ?>
 </section>
 </article>

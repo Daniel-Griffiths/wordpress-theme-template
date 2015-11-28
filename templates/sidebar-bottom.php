@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: No Sidebar
+ * Template Name: Sidebar Bottom
  */
 
 get_header(); 
@@ -23,3 +23,4 @@ get_header();
 
 <?php
 get_footer();
+get_sidebar();

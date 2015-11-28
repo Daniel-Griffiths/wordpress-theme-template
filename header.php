@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/mobile.css" />
 	<!--[if lt IE 9]>
 	  <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
 	<?php wp_head(); ?>
@@ -44,9 +45,18 @@
 		echo '
 		<div class="hero-banner" style="background-image:url(' . wp_get_attachment_url( get_post_thumbnail_id($post->ID)) . ');">
 			<div class="inner">
-				<h1><strong>Main Text</strong><br>Sub Text</h1>
-				<a href="#" class="btn btn-default">Button</a>
-				<a href="#" class="btn btn-default">Button</a>
+				';
+				if(is_front_page()){
+				
+					echo 
+					'<h1><strong>Main Text</strong><br>Sub Text</h1>
+					<a href="#" class="btn btn-default">Button</a>
+					<a href="#" class="btn btn-default">Button</a>
+					';
+
+					//echo '<br>' . do_shortcode('[post-box amount="3"]');
+				}
+			echo '
 			</div>
 		</div>
 		';	
