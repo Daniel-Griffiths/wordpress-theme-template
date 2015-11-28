@@ -14,6 +14,8 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+img{ border:0; }
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -202,6 +204,7 @@ header .active{
 */
 .main-content{
   min-height: 500px;
+  display:block; /* ie needs this */
 }
 
 /*
