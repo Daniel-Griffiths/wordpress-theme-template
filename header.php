@@ -6,6 +6,9 @@
 	<title><?php wp_title( ' | ', true, 'right' ); ?></title>
 	<link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/mobile.css" />
+	<!--[if lt IE 9]>
+	  <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<![endif]-->
 	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
 	<?php wp_head(); ?>
 </head>
