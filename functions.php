@@ -230,17 +230,54 @@ function wordpresstheme_filter_wp_title( $title ){
     return $title . esc_attr( get_bloginfo( 'name' ) );
 }
 
+/*
+|-------------------------------------------------------
+| Create Theme Widget Areas
+|-------------------------------------------------------
+*/
+
 add_action( 'widgets_init', 'wordpresstheme_widgets_init' );
 
 function wordpresstheme_widgets_init(){
-    register_sidebar( array (
+    
+	/* main sidebar widget */
+	register_sidebar(array(
         'name' => __( 'Sidebar Widget Area', 'wordpresstheme' ),
         'id' => 'primary-widget-area',
         'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
         'after_widget' => "</li>",
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
-    ) );
+    ));
+	
+	/* footer widgets */
+    register_sidebar(array(
+        'name' => __( 'Footer Widget 1', 'wordpresstheme' ),
+        'id' => 'footer-widget-area-1',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+	
+    register_sidebar(array(
+        'name' => __( 'Footer Widget 2', 'wordpresstheme' ),
+        'id' => 'footer-widget-area-2',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+	
+    register_sidebar(array(
+        'name' => __( 'Footer Widget 3', 'wordpresstheme' ),
+        'id' => 'footer-widget-area-3',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+	
 }
 
 function wordpresstheme_custom_pings( $comment ){

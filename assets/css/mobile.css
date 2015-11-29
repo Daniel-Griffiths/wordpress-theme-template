@@ -1,7 +1,7 @@
 @media screen and (max-width: 500px){
 	
 	/* navigation */
-	header nav ul{
+	.header nav ul{
 		top: 0;
 		left: 0;
 		margin: 0;
@@ -16,17 +16,17 @@
 		-webkit-transform: translateX(-100%);
 	}
 	
-	header nav li{
+	.header nav li{
 		border:0;
 		width:100%;
 	}
 	
-	header nav{
+	.header nav{
 		height: 45px;
 		cursor:pointer;
 	}
 	
-	header nav .grid:after{
+	.header nav .grid:after{
 		content: "☰";
 		display: block;
 		color: #fff;
@@ -37,14 +37,14 @@
 	}
 	
 	/* sub nav */
-	header nav ul ul{
+	.header nav ul ul{
 		top:0;
 		opacity:1;
 		position:relative;
 		width:100% !important;
 	}
 	
-	header nav ul ul a{
+	.header nav ul ul a{
 		padding-left:40px;
 		background: rgba(0,0,0,0.3);
 	}

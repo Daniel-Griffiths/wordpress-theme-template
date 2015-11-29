@@ -2,16 +2,13 @@
 	<footer class="footer">
 	<div class="grid">
 		<div class="col-1-4">
-			<h3>Footer Title</h3>
-		  	<p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit</p> 
+			<?php if(is_active_sidebar('footer-widget-area-1')) dynamic_sidebar('footer-widget-area-1'); ?>	
 		</div>
 		<div class="col-1-4">
-			<h3>Footer Title</h3>
-		  	<p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit </p>
+			<?php if(is_active_sidebar('footer-widget-area-2')) dynamic_sidebar('footer-widget-area-2'); ?>	
 		</div>
 		<div class="col-1-4">
-			<h3>Footer Title</h3>
-		  	<p>Morbi vitae euismod sem, at iaculis ipsum. Morbi lobortis elementum sapien at pellentesque. Sed in vestibulum purus. Praesent molestie quis ligula ut dignissim. Aliquam eget ante sem. Sed commodo sagittis ante, id rhoncus neque blandit </p>
+			<?php if(is_active_sidebar('footer-widget-area-3')) dynamic_sidebar('footer-widget-area-3'); ?>	
 		</div>
 		<div class="col-1-4">
 			<h3>Company Details</h3>
@@ -25,7 +22,7 @@
 			  <?php if(!empty( get_option('website_company_name'))) echo get_option('website_company_name'); ?>
 			</div>
 			<div class="col-1-2 made-by">
-			  Web design by <strong>BLANK</strong>
+			  Web design by <strong>Company Name</strong>
 			</div>
 		</div>
 	</div>

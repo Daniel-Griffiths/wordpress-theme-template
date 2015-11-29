@@ -15,7 +15,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<div id="wrapper" class="hfeed">
-	<header id="header" role="banner">
+	<header class="header" id="header" role="banner">
 		<section id="branding" class="grid">
 			<div class="col-1-2">
 				<a href="/">
