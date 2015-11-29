@@ -11,7 +11,7 @@ By default the theme uses a full width view with no sidebar. There are 3 templat
 ##Footer
 The footer comes with 4 columns as standard. Columns 1-3 can be edited via the widgets page in Wordpress, Column 4 displays the company address.
 
-##Settings
+##Theme Settings
 The theme includes a new "Website Settings" option that is added in the admin dashboard of Wordpress. By default this has a few basic option such as company details and social media URL's. 
 
 To add more options open up the `/includes/theme-options.php` file and add a new array into the main `website_settings` array. See the example below:-
@@ -35,3 +35,13 @@ array(
     'Placeholder' => 'Please enter some text here'
 )
 ```
+
+##Theme Shortcodes
+
+**Post Boxes**
+
+The grabs a select amount of posts and displays them as boxes.
+
+Usage in the WP editor - `[post-box amount="3"]`
+
+Usage in PHP - `do_shortcode('[post-box amount="3"]`
