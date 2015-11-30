@@ -1,12 +1,12 @@
+$(function() {
+
 /*
 |-------------------------------------------------------
-| Title: Main Javascript
-| Developer: Daniel Griffiths
-| Updated: 17/07/2015
+| Attach Fastclick to the body
 |-------------------------------------------------------
 */
 
-$(function() {
+	FastClick.attach(document.body);
 
 /*
 |-------------------------------------------------------
