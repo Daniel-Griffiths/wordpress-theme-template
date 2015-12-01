@@ -16,6 +16,6 @@ License URI: https://www.gnu.org/licenses/gpl.html
 .screen-reader-text {}
 .gallery-caption{}
 .bypostauthor{}
-.alignright{}
-.alignleft{}
+.alignright{ float:right; }
+.alignleft{ float:left; }
 .aligncenter{}
