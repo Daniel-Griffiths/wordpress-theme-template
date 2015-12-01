@@ -40,7 +40,7 @@ array(
 
 **Post Boxes**
 
-The grabs a select amount of posts and displays them as boxes.
+The grabs a select amount of posts and displays them as boxes. By default these are ordered by the post date.
 
 Usage in the WP editor - `[post-box amount="3"]`
 
