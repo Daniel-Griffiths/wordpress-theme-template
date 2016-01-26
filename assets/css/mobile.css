@@ -6,8 +6,8 @@
 		left: 0;
 		margin: 0;
 		z-index:10;
-		height:100%;
-		position: fixed;
+		min-height:100%;
+		position: absolute;
 		background: #272626;
 		padding:0 !important;
 		width:70% !important;
