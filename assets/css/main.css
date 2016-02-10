@@ -125,6 +125,15 @@ textarea{
   background:#515C6A;
 }
 
+.header nav ul ul{
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header nav ul ul li{
+  width: 100%;
+}
+
 .header nav a:hover, .header .current_page_item{
   background:rgba(255,255,255,.1);
 }
