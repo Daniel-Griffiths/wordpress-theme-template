@@ -137,17 +137,19 @@ textarea{
 .header li:hover ul{
   opacity: 1;
   visibility: visible;
+  height:auto;
   transform: translateY(0);
 }
 
 .header nav ul ul{
   left: 0;
-  top: 55px;
+  top: 54px;
   z-index: 10;
   width: auto;
   position: absolute;
   visibility: hidden;
   opacity: 0;
+  height:0;
   transition: 300ms cubic-bezier(.20,.90,.20,1);
   white-space: nowrap;
   transform: translateY(-5px);
