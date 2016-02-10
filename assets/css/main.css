@@ -125,11 +125,6 @@ textarea{
   background:#515C6A;
 }
 
-.header nav ul ul{
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .header nav ul ul li{
   width: 100%;
 }
@@ -140,7 +135,8 @@ textarea{
 
 /* sub nav */
 .header li:hover ul{
-  display:block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .header nav ul ul{
@@ -148,8 +144,12 @@ textarea{
   top: 55px;
   z-index: 10;
   width: auto;
-  display: none;
   position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: .1s ease;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .header .active{
