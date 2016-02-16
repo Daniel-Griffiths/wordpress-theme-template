@@ -143,17 +143,17 @@ textarea{
 
 .header nav ul ul{
   left: 0;
+  height:0;
   top: 54px;
+  opacity: 0;
   z-index: 10;
   width: auto;
-  position: absolute;
+  overflow: hidden;
   visibility: hidden;
-  opacity: 0;
-  height:0;
-  transition: 300ms cubic-bezier(.20,.90,.20,1);
+  position: absolute;
   white-space: nowrap;
   transform: translateY(-5px);
-  overflow: hidden;
+  transition: 300ms cubic-bezier(.20,.90,.20,1);
 }
 
 .header .active{
