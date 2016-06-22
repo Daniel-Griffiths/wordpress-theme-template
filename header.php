@@ -26,7 +26,7 @@
 			<div class="col-1-2">
 				<?php 
 					/* display website details */
-					if(!empty( get_option('website_tel'))) 			echo '<div>' . get_option('website_tel') . '</div>';
+					if(!empty( get_option('website_tel_1'))) 			echo '<div>' . get_option('website_tel_1') . '</div>';
 					if(!empty( get_option('website_email'))) 		echo '<div>' . get_option('website_email') . '</div>';
 					if(!empty( get_option('website_facebook_url'))) echo '<div>' . get_option('website_facebook_url') . '</div>';
 					if(!empty( get_option('website_twitter_url')))  echo '<div>' . get_option('website_twitter_url') . '</div>'; 
