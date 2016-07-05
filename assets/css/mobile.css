@@ -1,6 +1,12 @@
 @media screen and (max-width: 500px){
 	
 	/* navigation */
+	.header .active{
+	  display:block;
+	  transform: translateX(0%);
+	  -webkit-transform: translateX(0%);
+	}	
+	
 	.header nav ul{
 		top: 0;
 		left: 0;
