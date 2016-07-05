@@ -155,12 +155,6 @@ textarea{
   transition: 300ms cubic-bezier(.20,.90,.20,1);
 }
 
-.header .active{
-  display:block;
-  transform: translateX(0%);
-  -webkit-transform: translateX(0%);
-}
-
 /* hero banner */
 .hero-banner{
   height: 400px;
