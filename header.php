@@ -24,13 +24,18 @@
 				</a>
 			</div>
 			<div class="col-1-2">
-				<?php 
-					/* display website details */
-					if(!empty( get_option('website_tel_1'))) 			echo '<div>' . get_option('website_tel_1') . '</div>';
-					if(!empty( get_option('website_email'))) 		echo '<div>' . get_option('website_email') . '</div>';
-					if(!empty( get_option('website_facebook_url'))) echo '<div>' . get_option('website_facebook_url') . '</div>';
-					if(!empty( get_option('website_twitter_url')))  echo '<div>' . get_option('website_twitter_url') . '</div>'; 
-				?>
+					<?php if(!empty( get_option('website_tel_1'))): ?> 
+						<div><?= get_option('website_tel_1') ?></div>
+					<?php endif; ?>
+					<?php if(!empty( get_option('website_email'))): ?> 
+						<div><?= get_option('website_email') ?></div>
+					<?php endif; ?>
+					<?php if(!empty( get_option('website_facebook_url'))): ?> 
+						<div><?= get_option('website_facebook_url') ?></div>
+					<?php endif; ?>
+					<?php if(!empty( get_option('website_twitter_url'))): ?> 
+						<div><?= get_option('website_twitter_url') ?></div>
+					<?php endif; ?>
 			</div>
 		</section>
 		<nav id="menu" role="navigation">
@@ -42,25 +47,16 @@
 
 	<?php 
 	/* display featured image as a hero banner */
-	if(has_post_thumbnail()){ 
-		echo '
-		<div class="hero-banner" style="background-image:url(' . wp_get_attachment_url( get_post_thumbnail_id($post->ID)) . ');">
+	if(has_post_thumbnail()): 
+	?>
+		<div class="hero-banner" style="background-image:url('<?= wp_get_attachment_url( get_post_thumbnail_id($post->ID)) ?>');">
 			<div class="inner">
-				';
-				if(is_front_page()){
-				
-					echo 
-					'<h1><strong>Main Text</strong><br>Sub Text</h1>
+				<?php if(is_front_page()): ?>
+					<h1><strong>Main Text</strong><br>Sub Text</h1>
 					<a href="#" class="btn btn-default">Button</a>
 					<a href="#" class="btn btn-default">Button</a>
-					';
-
-					//echo '<br>' . do_shortcode('[post-box amount="3"]');
-				}
-			echo '
+				<?php endif; ?>
 			</div>
 		</div>
-		';	
-	} 
-	?>
+	<?php endif; ?>
 	<main class="grid main-content">
