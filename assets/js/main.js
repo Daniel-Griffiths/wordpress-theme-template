@@ -14,7 +14,7 @@ $(function() {
 |-------------------------------------------------------
 */
 
-  $("nav").click(function() {
+  $(".res-menu").click(function() {
     $("nav ul").toggleClass('active');
   });
   

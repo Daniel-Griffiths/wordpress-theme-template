@@ -32,7 +32,7 @@
 		cursor:pointer;
 	}
 	
-	.header nav .grid:after{
+	.res-menu:after{
 		content: "☰";
 		display: block;
 		color: #fff;

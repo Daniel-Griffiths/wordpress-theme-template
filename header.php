@@ -41,6 +41,7 @@
 		<nav id="menu" role="navigation">
 			<div class="grid no-overflow">
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+				<div class="res-menu"></div>
 			</div>
 		</nav>
 	</header>
