@@ -36,6 +36,12 @@ array(
 )
 ```
 
+To use an option in your theme template use the `get_option()` function. For example:-
+
+```
+<?= get_option('website_tel_1') ?>
+```
+
 ##Theme Shortcodes
 
 **Post Boxes**
