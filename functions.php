@@ -9,6 +9,17 @@ require __DIR__.'/includes/init.php';
 
 /*
 |-------------------------------------------------------
+| Declare woocommerce support
+|-------------------------------------------------------
+*/
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+/*
+|-------------------------------------------------------
 | Clean up the WordPress head
 |-------------------------------------------------------
 |
