@@ -190,7 +190,7 @@ function my_login_logo() { ?>
             to   { opacity: 1;   transform: translateY(0);}
         }
     </style>
-}
+
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
