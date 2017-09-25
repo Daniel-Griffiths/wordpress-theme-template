@@ -50,4 +50,4 @@ The grabs a select amount of posts and displays them as boxes. By default these 
 
 Usage in the WP editor - `[post-box amount="3"]`
 
-Usage in PHP - `do_shortcode('[post-box amount="3"]`)
+Usage in PHP - `do_shortcode('[post-box amount="3"]')`
